@@ -1,20 +1,45 @@
-.first-side {
+body {
+  margin: 0;
+  font-family: open sans;
+}
+.first__side {
   width: 50%;
   display: inline-block;
   background-color: #455A64;
+
 }
-.second-side {
+.second__side {
   width: 50%;
   display: inline-block;
   float: right;
   background-color: #CFD8DC;
+  height: 1216px;
 }
+
+.delete__read {
+  width: 35%;
+  margin-left: 33%;
+  margin-bottom: 250px;
+  font-size: 20px;
+}
+
 .inputs {
   width: 70%;
-  margin-left: 10%;
+  margin-left: 14.5%;
   height: 50px;
   margin-top: 75px;
+  margin-bottom: 0;
+  font-size: 35px;
 }
+
+.input__title {
+margin-top: 150px;
+}
+
+.readCard {
+  background-color: red;
+}
+
 .inputs::placeholder {
   font-size: 35px;
 }
@@ -27,26 +52,30 @@ span {
   color: #fff;
 }
 
-.enter-btn {
+.enter__btn {
   width: 71.3%;
-  margin-left: 10%;
+  margin-left: 14.5%;
   height: 50px;
   color: #fff;
   background-color: #FFC107;
   margin-top: 75px;
-  margin-bottom: 200px;
+  margin-bottom: 100px;
   font-size: 25px;
 }
 
-.enter-btn:hover {
+.enter__btn:hover {
 background-color: #FFD773;
 }
 
-.card {
+.enter__btn:disabled {
+background-color: #C0C0C0;
+}
+
+.card__body {
   background-color: white;
-  border: 2px solid #455A64;
+  border: 2px solid #607D8B;
   margin: 30px;
-  height: 130px;
+  height: 190px;
   padding: 30px;
 }
 
@@ -56,20 +85,81 @@ margin: 0;
 color: #455A64;
 }
 
-.card-url {
-  font-size: 25px;
+h1 {
+  font-size: 5em;
+  font-weight: bold;
+  letter-spacing: 0.04em;
+  text-align: center;
+  color: #fff;
+  margin-top: 300px;
+  margin-bottom: 100px;
+}
+
+img {
+  height: 110px;
+  vertical-align: bottom;
+  width: 124px;
+}
+
+.header {
+  display: flex;
+  flex-flow: row wrap;
+  height:350px;
+  justify-content: center;
+  align-content: space-around;
+  align-self: center;
+  font-weight: 800;
+}
+
+.card__url {
+  font-size: 30px;
   color: #607D8B;
-  margin-bottom: 20px;
+  margin-top: 50px;
+  border-bottom: 2px solid #607D8B;
+}
+
+.card__url:hover {
+  border: 0;
+  border-bottom: 2px solid #FFC107;
+  color: #455A64;
 }
 
 hr {
-  margin: 10px;
+  margin-top: 22px;
+  margin-bottom: 22px;
+  background-color: #CFD8DC;
 }
-.card-btn {
+.card__btn {
   border: 0px solid white;
-  border-bottom: 1px solid #607D8B;
+  border-bottom: 2px solid #607D8B;
+  font-size: 20px;
+  color: #455A64;
+}
+
+.card__btn:hover {
+  border: 0;
+  border-bottom: 2px solid #FFC107;
+  color: #455A64;
 }
 
 .delete {
   float: right;
 }
+
+@media screen and (max-width: 1400px) {
+  h1 {
+    font-size: 3em;
+  }
+
+  img {
+    height: 80px;
+    width: 85px;
+  }
+}
+
+@media screen and (max-width: 900px) {
+.first__side {
+  width: 100%;
+  display: block;
+}
+};
