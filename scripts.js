@@ -1,3 +1,4 @@
+
 var inputTitle = document.querySelector('.input__title');
 var inputUrl = document.querySelector('.input__url');
 var enterButton = document.querySelector('.enter__btn');
@@ -48,4 +49,54 @@ function appendCard(section, article) {
     <article>`);
   clearInputFields();
 };
+
+function allCount() {
+  counter++;
+  bookmarkMadeCount.innerText='Bookmark Made: ' + counter;
+}
+
+function markRead() {
+  if (event.target && event.target.matches(".read__button")) {
+    var card = event.target.closest('article');
+    card.classList.toggle('readCard');
+    readCount();
+  };
+};
+
+function readCount() {
+  var array = document.querySelectorAll('.readCard');
+  bookmarkReadCount.innerText = 'Read: ' + array.length;
+};
+
+function deleteCard() {
+  if (event.target && event.target.matches('.delete__button')) {
+    var card = event.target.closest('.card__body');
+    card.remove();
+    var array = document.querySelectorAll('.readCard');
+    bookmarkReadCount.innterText = 'Read: ' + array.length;
+  };
+};
+
+function deleteRead () {
+  var allRead = document.querySelectorAll('.readCard');
+  for (var i = 0; i < allRead.length; i++) {
+    allRead[i].parentElement.remove();
+    bookmarkReadCount.innerText = 'Read: ' + array.length;
+  };
+};
+
   
+function disableEnter() {
+  if (inputTitle.value === '' && inputUrl.value === '') {
+    enterButton.disabled = true;
+  } else {
+    enterButton.disabled = false;
+  }
+};
+
+function clearInputFields () {
+  inputTitle.value = '';
+  inputUrl.value = '';
+  enterButton.disabled = true;
+}
+
