@@ -4,6 +4,12 @@ body {
   background-color: #455A64;
 }
 
+img {
+  height: 110px;
+  vertical-align: bottom;
+  width: 124px;
+}
+
 h1 {
   font-size: 5em;
   font-weight: bold;
@@ -51,7 +57,8 @@ span {
   margin: 30px;
   height: 190px;
   padding: 30px;
-}
+  overflow: hidden;
+  white-space: nowrap;
 
 .card__button {
   border: 0;
@@ -88,7 +95,6 @@ span {
 .delete__button {
   float: right;
 }
-
 
 .delete__read {
   width: 35%;
@@ -179,7 +185,7 @@ span {
     height: 80px;
     width: 85px;
   }
-  
+
   .card__button {
     border: 0;
   }
@@ -194,7 +200,7 @@ span {
     width: 100%;
     display: block;
   }
-  
+
   .second__side {
     width: 100%;
     display: block;
