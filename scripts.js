@@ -2,10 +2,12 @@
 var inputTitle = document.querySelector('.input__title');
 var inputUrl = document.querySelector('.input__url');
 var enterButton = document.querySelector('.enter__btn');
+var firstSide = document.querySelector('.first__side');
 var secondSide = document.querySelector('.second__side');
 var card = document.createElement('article');
 var bookmarkMadeCount = document.querySelector('.article__made');
 var bookmarkReadCount = document.querySelector('.article__read');
+var bookmarkUnreadCount = document.querySelector('.article__unread');
 var warning = document.querySelector('.paragraph__warning');
 var deleteReadButton = document.querySelector('.delete__read');
 var readButton = document.querySelector('.read__button');
@@ -16,16 +18,28 @@ deleteReadButton.addEventListener('click', deleteRead);
 inputTitle.addEventListener('input', disableEnter);
 inputUrl.addEventListener('input', disableEnter);
 enterButton.addEventListener('click', verifyInput);
-deleteReadButton.addEventListener('click', totalCount);
+
+secondSide.style.overflow = 'auto';
+firstSide.style.overflow = 'auto';
+
+
 
 function verifyInput() {
   if (inputTitle.value === '' || inputUrl.value === '')
   {
     alert('Please enter the required information')
   } else {
-    createCard();
+    verifyUrl();
   }
 };
+
+function verifyUrl() {
+if (/^(http|https|ftp):\/\/[a-z0-9]+([\-\.]{1}[a-z0-9]+)*\.[a-z]{2,5}(:[0-9]{1,5})?(\/.*)?$/i.test(inputUrl.value)) {
+createCard();
+} else {
+  alert('Please enter a valid url');
+}
+}
 
 function createCard() {
   event.preventDefault();
@@ -41,11 +55,13 @@ function appendCard(section, article) {
   article.innerHTML = (`
     <article class="card__body__article">
     <h2>${inputTitle.value}</h2>
+    <hr>
     <div class="article__link">
       <a class="card__url" href="${inputUrl.value}" style="text-decoration: none">${inputUrl.value}</a>
     </div>
-    <button class="read__button">Read</p>
-    <button class="delete__button">Delete</p>
+    <hr>
+    <button class="card__button read__button">Read</p>
+    <button class="card__button delete__button">Delete</p>
     <article>`);
   clearInputFields();
   disableDeleteRead();
@@ -53,18 +69,19 @@ function appendCard(section, article) {
 
 function markRead() {
   if (event.target && event.target.matches(".read__button")) {
-    var card = event.target.closest('article');
+    var card = event.target.closest('.card__body')
     card.classList.toggle('readCard');
-    readCount();
+    totalCount();
   };
 };
 
 function totalCount() {
   var totalCardArray = document.querySelectorAll('.card__body');
-  var readCardArray = document.querySelectorAll('.readCard'); 
+  var readCardArray = document.querySelectorAll('.readCard');
+  var unreadCardArray = (totalCardArray.length - readCardArray.length);
   bookmarkReadCount.innerText = 'Read: ' + readCardArray.length;
+  bookmarkUnreadCount.innerText = 'Unread: ' + unreadCardArray; 
   bookmarkMadeCount.innerText = 'Total: ' + totalCardArray.length;
-
 };
 
 function deleteCard() {
@@ -76,11 +93,10 @@ function deleteCard() {
 };
 
 function deleteRead () {
-  var totalCardArray = document.querySelectorAll('.card__body');
   var readCardArray = document.querySelectorAll('.readCard');
   for (var i = 0; i < readCardArray.length; i++) {
-  readCardArray[i].parentElement.remove();
-  };
+  readCardArray[i].remove();
+  }
   totalCount();
 };
 

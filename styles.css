@@ -1,88 +1,30 @@
 body {
   margin: 0;
   font-family: open sans;
+  background-color: #455A64;
 }
+
 .first__side {
   width: 50%;
   display: inline-block;
   background-color: #455A64;
-
-}
-.second__side {
-  width: 50%;
-  display: inline-block;
-  float: right;
-  background-color: #CFD8DC;
-  height: 1216px;
 }
 
-.delete__read {
-  width: 35%;
-  margin-left: 33%;
-  margin-bottom: 250px;
-  font-size: 20px;
+
+.header {
+  display: flex;
+  flex-flow: row wrap;
+  height:350px;
+  justify-content: center;
+  align-content: space-around;
+  align-self: center;
+  font-weight: 800;
 }
 
-.inputs {
-  width: 70%;
-  margin-left: 14.5%;
-  height: 50px;
-  margin-top: 75px;
-  margin-bottom: 0;
-  font-size: 35px;
-}
-
-.input__title {
-margin-top: 150px;
-}
-
-.readCard {
-  background-color: red;
-}
-
-.inputs::placeholder {
-  font-size: 35px;
-}
-
-span {
-  margin-top: 300px;
-  font-size: 100px;
-  display: inline-block;
-  margin-left: 5%;
-  color: #fff;
-}
-
-.enter__btn {
-  width: 71.3%;
-  margin-left: 14.5%;
-  height: 50px;
-  color: #fff;
-  background-color: #FFC107;
-  margin-top: 75px;
-  margin-bottom: 100px;
-  font-size: 25px;
-}
-
-.enter__btn:hover {
-background-color: #FFD773;
-}
-
-.enter__btn:disabled {
-background-color: #C0C0C0;
-}
-
-.card__body {
-  background-color: white;
-  border: 2px solid #607D8B;
-  margin: 30px;
-  height: 190px;
-  padding: 30px;
-}
-
-h2 {
-font-size: 35px;
-margin: 0;
-color: #455A64;
+img {
+  height: 110px;
+  vertical-align: bottom;
+  width: 124px;
 }
 
 h1 {
@@ -95,20 +37,100 @@ h1 {
   margin-bottom: 100px;
 }
 
-img {
-  height: 110px;
-  vertical-align: bottom;
-  width: 124px;
+.inputs {
+  width: 70%;
+  margin-left: 14.5%;
+  height: 50px;
+  margin-top: 75px;
+  margin-bottom: 0;
+  font-size: 35px;
 }
 
-.header {
-  display: flex;
-  flex-flow: row wrap;
-  height:350px;
-  justify-content: center;
-  align-content: space-around;
-  align-self: center;
-  font-weight: 800;
+.inputs::placeholder {
+  font-size: 35px;
+}
+
+.input__title {
+margin-top: 150px;
+}
+
+.enter__btn {
+  width: 71.3%;
+  margin-left: 14.5%;
+  height: 50px;
+  color: #fff;
+  background-color: #FFC107;
+  margin-top: 75px;
+  margin-bottom: 15px;
+  font-size: 25px;
+}
+
+.enter__btn:disabled {
+background-color: #C0C0C0;
+}
+
+.enter__btn:hover {
+background-color: #FFD773;
+}
+
+.delete__read {
+  width: 35%;
+  margin-left: 33%;
+  margin-bottom: 250px;
+  font-size: 20px;
+}
+
+.second__side {
+  width: 50%;
+  display: inline-block;
+  float: right;
+  background-color: #CFD8DC;
+  height: 1282px;
+  margin: 0;
+}
+
+h2 {
+box-sizing: height;
+font-size: 35px;
+margin: 0;
+color: #455A64;
+text-overflow: clip;
+}
+
+hr {
+  margin-top: 22px;
+  margin-bottom: 18 px;
+  background-color: #CFD8DC;
+}
+
+span {
+  margin-top: 300px;
+  font-size: 100px;
+  display: inline-block;
+  margin-left: 5%;
+  color: #fff;
+}
+
+.card__body {
+  background-color: white;
+  border: 2px solid #607D8B;
+  margin: 30px;
+  height: 190px;
+  padding: 30px;
+  overflow: hidden;
+}
+
+.card__button {
+  border: 0;
+  font-size: 15px;
+  border-bottom: 2px solid #607D8B;
+  color: #607D8B;
+}
+
+.card__button:hover {
+  border: 0;
+  border-bottom: 2px solid #FFC107;
+  color: #455A64;
 }
 
 .card__url {
@@ -124,26 +146,22 @@ img {
   color: #455A64;
 }
 
-hr {
-  margin-top: 22px;
-  margin-bottom: 22px;
-  background-color: #CFD8DC;
-}
-.card__btn {
-  border: 0px solid white;
-  border-bottom: 2px solid #607D8B;
+.count {
+  color: white;
   font-size: 20px;
-  color: #455A64;
+  text-align: center;
 }
 
-.card__btn:hover {
-  border: 0;
-  border-bottom: 2px solid #FFC107;
-  color: #455A64;
-}
-
-.delete {
+.delete__button {
   float: right;
+}
+
+.read__button:hover {
+  color: red;
+}
+
+.readCard {
+  background-color: #F2F4F4;
 }
 
 @media screen and (max-width: 1400px) {
@@ -155,11 +173,21 @@ hr {
     height: 80px;
     width: 85px;
   }
+  .card__button {
+  border: 0;
+}
 }
 
-@media screen and (max-width: 900px) {
+@media screen and (max-width: 1000px) {
 .first__side {
   width: 100%;
   display: block;
+}
+.second__side {
+  width: 100%;
+  display: block;
+}
+.card__button {
+  border: 0;
 }
 };
