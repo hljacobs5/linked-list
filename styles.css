@@ -4,29 +4,6 @@ body {
   background-color: #455A64;
 }
 
-.first__side {
-  width: 50%;
-  display: inline-block;
-  background-color: #455A64;
-}
-
-
-.header {
-  display: flex;
-  flex-flow: row wrap;
-  height:350px;
-  justify-content: center;
-  align-content: space-around;
-  align-self: center;
-  font-weight: 800;
-}
-
-img {
-  height: 110px;
-  vertical-align: bottom;
-  width: 124px;
-}
-
 h1 {
   font-size: 5em;
   font-weight: bold;
@@ -37,70 +14,24 @@ h1 {
   margin-bottom: 100px;
 }
 
-.inputs {
-  width: 70%;
-  margin-left: 14.5%;
-  height: 50px;
-  margin-top: 75px;
-  margin-bottom: 0;
-  font-size: 35px;
-}
-
-.inputs::placeholder {
-  font-size: 35px;
-}
-
-.input__title {
-margin-top: 150px;
-}
-
-.enter__btn {
-  width: 71.3%;
-  margin-left: 14.5%;
-  height: 50px;
-  color: #fff;
-  background-color: #FFC107;
-  margin-top: 75px;
-  margin-bottom: 15px;
-  font-size: 25px;
-}
-
-.enter__btn:disabled {
-background-color: #C0C0C0;
-}
-
-.enter__btn:hover {
-background-color: #FFD773;
-}
-
-.delete__read {
-  width: 35%;
-  margin-left: 33%;
-  margin-bottom: 250px;
-  font-size: 20px;
-}
-
-.second__side {
-  width: 50%;
-  display: inline-block;
-  float: right;
-  background-color: #CFD8DC;
-  height: 1282px;
-  margin: 0;
-}
-
 h2 {
-box-sizing: height;
-font-size: 35px;
-margin: 0;
-color: #455A64;
-text-overflow: clip;
+  box-sizing: height;
+  font-size: 35px;
+  margin: 0;
+  color: #455A64;
+  text-overflow: clip;
 }
 
 hr {
   margin-top: 22px;
   margin-bottom: 18 px;
   background-color: #CFD8DC;
+}
+
+img {
+  height: 110px;
+  vertical-align: bottom;
+  width: 124px;
 }
 
 span {
@@ -111,13 +42,15 @@ span {
   color: #fff;
 }
 
+
 .card__body {
   background-color: white;
+  overflow: hidden;
+  white-space: nowrap;
   border: 2px solid #607D8B;
   margin: 30px;
   height: 190px;
   padding: 30px;
-  overflow: hidden;
 }
 
 .card__button {
@@ -156,12 +89,85 @@ span {
   float: right;
 }
 
+
+.delete__read {
+  width: 35%;
+  margin-left: 33%;
+  margin-bottom: 250px;
+  font-size: 20px;
+}
+
+.enter__btn {
+  width: 71.3%;
+  margin-left: 14.5%;
+  height: 50px;
+  color: #fff;
+  background-color: #FFC107;
+  margin-top: 75px;
+  margin-bottom: 15px;
+  font-size: 25px;
+}
+
+.enter__btn:disabled {
+  background-color: #C0C0C0;
+}
+
+.enter__btn:hover {
+  background-color: #FFD773;
+}
+
+.first__side {
+  width: 50%;
+  display: inline-block;
+  background-color: #455A64;
+}
+
+.header {
+  display: flex;
+  flex-flow: row wrap;
+  height:350px;
+  justify-content: center;
+  align-content: space-around;
+  align-self: center;
+  font-weight: 800;
+}
+
+.inputs {
+  width: 70%;
+  margin-left: 14.5%;
+  height: 50px;
+  margin-top: 75px;
+  margin-bottom: 0;
+  font-size: 35px;
+}
+
+.inputs::placeholder {
+  font-size: 35px;
+}
+
+.input__title {
+  margin-top: 150px;
+}
+
 .read__button:hover {
   color: red;
 }
 
 .readCard {
   background-color: #F2F4F4;
+}
+
+.readChange {
+  color: #F05A28;
+}
+
+.second__side {
+  width: 50%;
+  display: inline-block;
+  float: right;
+  background-color: #CFD8DC;
+  height: 1282px;
+  margin: 0;
 }
 
 @media screen and (max-width: 1400px) {
@@ -173,21 +179,24 @@ span {
     height: 80px;
     width: 85px;
   }
+  
   .card__button {
-  border: 0;
-}
-}
+    border: 0;
+  }
+};
 
 @media screen and (max-width: 1000px) {
-.first__side {
-  width: 100%;
-  display: block;
-}
-.second__side {
-  width: 100%;
-  display: block;
-}
-.card__button {
-  border: 0;
-}
+  .card__button {
+    border: 0;
+  }
+  
+  .first__side {
+    width: 100%;
+    display: block;
+  }
+  
+  .second__side {
+    width: 100%;
+    display: block;
+  }
 };

@@ -69,7 +69,6 @@ function markRead() {
     var card = event.target.closest('.card__body') //selects everything on the page that has a class of card__body then picks the one that is closest to where the click occured
     card.classList.toggle('readCard'); //remove or add the readCard class on each click. 
     totalCount(); //invoking the totalCount function
-  };
 };
 
 function totalCount() {
