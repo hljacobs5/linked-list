@@ -34,6 +34,12 @@ hr {
   background-color: #CFD8DC;
 }
 
+img {
+  height: 110px;
+  vertical-align: bottom;
+  width: 124px;
+}
+
 span {
   margin-top: 300px;
   font-size: 100px;
@@ -42,15 +48,17 @@ span {
   color: #fff;
 }
 
+
 .card__body {
   background-color: white;
+  overflow: hidden;
+  white-space: nowrap;
   border: 2px solid #607D8B;
   margin: 30px;
   height: 190px;
   padding: 30px;
   overflow: hidden;
   white-space: nowrap;
-}
 
 .card__button {
   border: 0;
@@ -153,6 +161,10 @@ span {
 
 .readCard {
   background-color: #F2F4F4;
+}
+
+.readChange {
+  color: #F05A28;
 }
 
 .second__side {
