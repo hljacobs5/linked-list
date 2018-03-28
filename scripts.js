@@ -1,22 +1,21 @@
+var inputTitle = document.querySelector('.input__title'); 
+var inputUrl = document.querySelector('.input__url'); 
+var enterButton = document.querySelector('.enter__btn'); 
+var firstSide = document.querySelector('.first__side');
+var secondSide = document.querySelector('.second__side');
+var card = document.createElement('article'); 
+var bookmarkMadeCount = document.querySelector('.article__made'); 
+var bookmarkReadCount = document.querySelector('.article__read');
+var bookmarkUnreadCount = document.querySelector('.article__unread');
+var deleteReadButton = document.querySelector('.delete__read');
+var readButton = document.querySelector('.read__button'); 
 
-var inputTitle = document.querySelector('.input__title'); //Setting the title textbox to a variable
-var inputUrl = document.querySelector('.input__url'); //Setting the url textbox to a variable
-var enterButton = document.querySelector('.enter__btn'); //Setting the enter button to a variable
-var firstSide = document.querySelector('.first__side'); //Setting the left section to a variable
-var secondSide = document.querySelector('.second__side'); //Setting the right section to a variable
-var card = document.createElement('article'); // Setting the entire card to a variable
-var bookmarkMadeCount = document.querySelector('.article__made'); //Setting the total number of bookmarks to a variable
-var bookmarkReadCount = document.querySelector('.article__read');//Setting the number of read bookmarks to a variable
-var bookmarkUnreadCount = document.querySelector('.article__unread'); //Setting the number of unread bookmarks to a variable
-var deleteReadButton = document.querySelector('.delete__read'); //Setting the "delete read cards" button to a variable
-var readButton = document.querySelector('.read__button'); //setting the "mark as read card" to a variable
-
-secondSide.addEventListener('click', markRead); //Setting an event listener to run the markRead function when the secondSide variable is clicked
-secondSide.addEventListener('click', deleteCard); //Setting an event listenet to run the deleteCard function when the secondSide variable is clicked
-deleteReadButton.addEventListener('click', deleteRead); //Setting an event listener to run the deleteCard function when the deleteReadButton variable is clicked
-inputTitle.addEventListener('input', disableEnter); //Setting an event listener to run the disableEnter function when the user types into the inputTitle variable 
-inputUrl.addEventListener('input', disableEnter); //Setting an event listener to run the disableEnter function when the user types into the inputUrl variable
-enterButton.addEventListener('click', verifyInput); //Setting an event listener to run the verifyInput function when the enterButton variable is clicked on 
+secondSide.addEventListener('click', markRead); 
+secondSide.addEventListener('click', deleteCard); 
+deleteReadButton.addEventListener('click', deleteRead); 
+inputTitle.addEventListener('input', disableEnter);  
+inputUrl.addEventListener('input', disableEnter); 
+enterButton.addEventListener('click', verifyInput); 
 
 secondSide.style.overflow = 'auto'; //Setting the overflow so that it
 firstSide.style.overflow = 'auto'; //creates a scroll bar instead of running off the page
@@ -66,8 +65,12 @@ function appendCard(section, article) {
 
 function markRead() {
   if (event.target && event.target.matches(".read__button")) { //if the place that is clicked has a class of read__button then run the following function
+    var buttons = document.querySelectorAll('.card__button');
     var card = event.target.closest('.card__body') //selects everything on the page that has a class of card__body then picks the one that is closest to where the click occured
     card.classList.toggle('readCard'); //remove or add the readCard class on each click. 
+    for (i=0; i < buttons.length; i++) {
+      buttons[i].classList.toggle('readCard');
+    }
     totalCount(); //invoking the totalCount function
   };
 };
