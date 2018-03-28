@@ -164,6 +164,9 @@ span {
   background-color: #F2F4F4;
 }
 
+.readChange {
+  color: #F05A28;
+}
 @media screen and (max-width: 1400px) {
   h1 {
     font-size: 3em;

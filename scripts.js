@@ -69,6 +69,9 @@ function appendCard(section, article) {
 
 function markRead() {
   if (event.target && event.target.matches(".read__button")) {
+    var readBtn = event.target
+    console.log(readBtn)
+    readBtn.classList.toggle('readChange')
     var card = event.target.closest('.card__body')
     card.classList.toggle('readCard');
     totalCount();
