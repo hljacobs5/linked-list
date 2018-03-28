@@ -1,4 +1,3 @@
-
 var inputTitle = document.querySelector('.input__title');
 var inputUrl = document.querySelector('.input__url');
 var enterButton = document.querySelector('.enter__btn');
@@ -73,7 +72,7 @@ function markRead() {
     readBtn.classList.toggle('readChange')
     var card = event.target.closest('.card__body')
     card.classList.toggle('readCard');
-    
+
     totalCount();
   };
 };
@@ -122,4 +121,3 @@ function disableDeleteRead() {
 var totalCardArray = document.querySelectorAll('.card__body');
     deleteReadButton.disabled = false;
 };
-
